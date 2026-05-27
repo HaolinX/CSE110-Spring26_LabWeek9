@@ -7,6 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lab 9</title>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({
+      token: "e78be64d6a0b4c21bb8f4cec626a5f21"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+
   <style>
     button {
       margin: 3px;
@@ -87,7 +95,7 @@
     </section>
   </main>
 
-  <script>
+  <!-- <script>
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -102,7 +110,8 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
-  </script>
+  </script> -->
+  <script src="errors.js"></script>
 </body>
 
 </html>
