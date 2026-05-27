@@ -1,5 +1,6 @@
 // Step 1: Setup
 const form = document.querySelector('form');
+// make it better for getButton readability
 const errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
 
 function getButton(label) {
@@ -7,10 +8,7 @@ function getButton(label) {
     return button.textContent.trim() === label;
   });
 }
-
 let timerStarted = false;
-let groupStarted = false;
-
 
 // Step 2: adding buttons for console testing
 getButton('Console Log').addEventListener('click', function() {
@@ -116,9 +114,7 @@ form.addEventListener('submit', function (event) {
 
   try {
     validateInputs(firstNum, secondNum, operator);
-
     const result = calculate(firstNum, secondNum, operator);
-
     output.textContent = result;
   
   
@@ -138,14 +134,6 @@ class ValidationError extends Error {
     super(message);
     this.name = 'ValidationError';
     this.field = field;
-  }
-}
-
-class MissingElementError extends Error {
-  constructor(selector) {
-    super('Missing expected element: ' + selector);
-    this.name = 'MissingElementError';
-    this.selector = selector;
   }
 }
 
@@ -182,8 +170,6 @@ function calculate(firstNum, secondNum, operator) {
   if (operator === '/') {
     return first / second;
   }
-
-  throw new ValidationError('operator', 'Invalid operator selected.');
 }
 
 
